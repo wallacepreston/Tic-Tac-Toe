@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2');
+
+* {
+
+  font-family: 'Baloo 2', cursive;
+  color: #1ad8e5;
+}
+
+main {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  width: 50vmin;
+  height: 50vmin;
+}
+
+.cell {
+  text-align: center;
+  font-size: 3rem;
+  display: grid;
+  place-items: center;
+}
+
+/* 3n+2 means Select every third element starting at second */
+.cell:nth-child(3n+2) {
+  border-right: 3px solid #f39b95;
+  border-left: 3px solid #f39b95;
+}
+
+/* n+4 means if you are the fourth child or after */
+/* -n+6 means if you are up to the 6th child */
+.cell:nth-child(n+4):nth-child(-n+6) {
+  border-top: 3px solid #f39b95;
+  border-bottom: 3px solid #f39b95;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+
+body > * {
+  margin-bottom: 2rem;
+}
+
+.player {
+  font-weight: bold;
+  color: #e5271a;
+  border-radius: 0.2rem;
+}
+
+#player-turn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.restart {
+  border-radius: .2rem;
+  margin-left: 2rem;
+}
+
+/* 
+dark cyan #1ad8e5
+light cyan #a5f0f5
+dark salmon #e5271a
+light salmon #f39b95
+*/
